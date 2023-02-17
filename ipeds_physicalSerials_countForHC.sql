@@ -19,7 +19,7 @@ AND
 AND 
 	substring(sm2.content from 24 for 1) not in ('o', 's') --008 POSITION 23 FOR form OF item AND online OR the OLD s FOR electronic
 AND 
-	(lt.name like 'MH%' or  lt.code in ('FCANI', 'FCDPS', 'FCDPM')) --Looks FOR names that BEGIN WITH MH WHERE PERCENT sign IS the wildcard AND SPECIFIC codes
+	(lt.name like 'HC%' or  lt.code in ('FCANI', 'FCDPS', 'FCDPM')) --Looks FOR names that BEGIN WITH HC WHERE PERCENT sign IS the wildcard AND SPECIFIC codes
 GROUP BY 
 	ROLLUP(lt.name) --This will provide a total count AT the bottom
 ORDER BY 
