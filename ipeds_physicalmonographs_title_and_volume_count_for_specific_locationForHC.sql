@@ -22,7 +22,7 @@ AND
 AND 
 	substring(sm2.content from 24 for 1) not in ('o', 's')  --008 POSITION 23 FOR form OF item AND online OR the OLD s FOR electronic
 AND 
-	lt.code  = 'MPPER' --Enter a SPECIFIC LOCATION code
+	lt.code  in (('HARCH','HCRC','HCDIS','HDIV','HGAME','HSKAE','HCNBS','HRESO','HREF','HRESV','HSEED','HSEYD','HSSEY','HSPEC','HSTAC','HWRIG') --Enter a SPECIFIC LOCATION code as 'XYX' OR LIST with in ('x','y')
 GROUP BY 
 	lt.name,
 	hrt.instance_id
