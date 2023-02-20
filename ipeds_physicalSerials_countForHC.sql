@@ -4,8 +4,8 @@ SELECT
 	COUNT(DISTINCT sm.srs_id) AS title_count, --Count of all srs bib uuids that have a bibliographic level or LDR position 7 for serials or integrating resource
 	lt.name AS location_name --Name of the location from the inventory.location_t table
 FROM 
-	public.srs_marctab sm 
-	LEFT JOIN public.srs_marctab sm2 ON sm2.srs_id::uuid = sm.srs_id::uuid
+	folio_source_record.marctab sm 
+	LEFT JOIN folio_source_record.marctab sm2 ON sm2.srs_id::uuid = sm.srs_id::uuid
 	LEFT JOIN inventory.holdings_record__t hrt ON sm.instance_id::uuid = hrt.instance_id::uuid 
 	LEFT JOIN inventory.location__t lt ON lt.id::uuid = hrt.permanent_location_id::uuid
 WHERE 
